@@ -1,4 +1,8 @@
 {
   "generator.the-voids-type": "The Voids",
-  "biome.thevoids.the-voids-biome": "The better Voids"
+  "biome.thevoids.the-voids-biome": "The better Voids",
+  "itemGroup.thevoids": "Stone Crafting Table",
+  "block.thevoids.stone_crafting_table": "Stone Crafting Table",
+  "item.thevoids.stone_crafting_plate": "Stone Crafting Plate",
+  "item.thevoids.stone_stick": "Stone Stick"
 }
