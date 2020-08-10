@@ -1,5 +1,6 @@
 package com.rempler.thevoids.block;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import com.rempler.thevoids.TheVoids;
@@ -40,6 +41,7 @@ public class TheVoidsBlock extends Block {
 		return REG_NAME;
 	}
 
+	@Nonnull
 	@Override
 	public ActionResultType onBlockActivated(final BlockState state, final World world, final BlockPos pos, final PlayerEntity player, final Hand hand, final BlockRayTraceResult rtr) {
 		if (!world.isRemote) {
@@ -52,7 +54,7 @@ public class TheVoidsBlock extends Block {
 	}
 
 	@Override
-	public void harvestBlock(final World world, final PlayerEntity player, final BlockPos pos, final BlockState state, @Nullable final TileEntity te, @Nullable ItemStack stack) {
+	public void harvestBlock(@Nonnull final World world, final PlayerEntity player, @Nonnull final BlockPos pos, final BlockState state, @Nullable final TileEntity te, @Nullable ItemStack stack) {
 		player.addStat(Stats.BLOCK_MINED.get(this));
 		player.addExhaustion(0.025F);
 		stack = getItemBlockWithNBT(te);

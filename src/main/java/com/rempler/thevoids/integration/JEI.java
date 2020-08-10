@@ -6,7 +6,6 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaRecipeCategoryUid;
 import mezz.jei.api.registration.*;
 import net.minecraft.util.ResourceLocation;
-import com.rempler.thevoids.init.Constants;
 import com.rempler.thevoids.init.ModObjects;
 import com.rempler.thevoids.client.TheVoidsScreen;
 import com.rempler.thevoids.container.TheVoidsContainer;

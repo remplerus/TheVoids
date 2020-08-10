@@ -7,6 +7,8 @@ import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 
+import javax.annotation.Nonnull;
+
 /**
  * @author Lothrazar via https://github.com/PrinceOfAmber/Cyclic/blob/develop/src/main/java/com/lothrazar/cyclicmagic/block/workbench/InventoryWorkbench.java
  *
@@ -27,11 +29,13 @@ public class TheVoidsInventory extends CraftingInventory {
 		return 9;
 	}
 
+	@Nonnull
 	@Override
 	public ItemStack getStackInSlot(final int index) {
 		return tile.getStackInSlot(index);
 	}
 
+	@Nonnull
 	@Override
 	public ItemStack decrStackSize(final int index, final int count) {
 		final ItemStack stack = tile.decrStackSize(index, count);
@@ -42,7 +46,7 @@ public class TheVoidsInventory extends CraftingInventory {
 	}
 
 	@Override
-	public void setInventorySlotContents(final int index, final ItemStack stack) {
+	public void setInventorySlotContents(final int index, @Nonnull final ItemStack stack) {
 		tile.setInventorySlotContents(index, stack);
 		tile.updateInvs();
 	}
