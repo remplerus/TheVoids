@@ -20,18 +20,9 @@ import org.apache.logging.log4j.Logger;
 @Mod(TheVoids.MODID)
 public class TheVoids
 {
-    public static final String CONFIG_FILE = "config/StoneCraftingTable.toml";
-    public static final ItemGroup ITEM_GROUP = new ItemGroup(TheVoids.MODID) {
-        @Override
-        public ItemStack createIcon() {
-            return ModObjects.ITEM_BLOCK_STONE_WORKBENCH.asStack();
-        }
-    };
-    public static final Item.Properties BASE_PROPS = new Item.Properties().group(ITEM_GROUP).maxStackSize(64);
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "thevoids";
     public static final WorldType THE_VOIDS_TYPE = new TheVoidsWorldType();
-    private static final CommonProxy proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 
     public TheVoids() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -40,12 +31,8 @@ public class TheVoids
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    public static CommonProxy getProxy() {
-        return proxy;
-    }
-
     private void setup(final FMLCommonSetupEvent event) {
-        proxy.init();
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

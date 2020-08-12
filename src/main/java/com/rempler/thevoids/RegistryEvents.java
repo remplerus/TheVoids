@@ -29,26 +29,6 @@ public class RegistryEvents {
         TheVoidsBiomes.registerBiomes();
     }
 
-    @SubscribeEvent
-    public static void registerBlock(final RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(ModObjects.STONE_WORKBENCH);
-    }
-
-    @SubscribeEvent
-    public static void registerItem(final RegistryEvent.Register<Item> event) {
-        event.getRegistry().registerAll(ModObjects.getItems());
-    }
-
-    @SubscribeEvent
-    public static void registerTile(final RegistryEvent.Register<TileEntityType<?>> event) {
-        event.getRegistry().register(TheVoidsTileEntity.TYPE);
-    }
-
-    @SubscribeEvent
-    public static void registerContainer(final RegistryEvent.Register<ContainerType<?>> event) {
-        event.getRegistry().register(TheVoidsContainer.TYPE);
-    }
-
     public static ResourceLocation location(String name){
         return new ResourceLocation(MODID, name);
     }
