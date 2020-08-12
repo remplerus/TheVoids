@@ -1,15 +1,10 @@
 package com.rempler.thevoids;
 
-import com.rempler.thevoids.init.ModObjects;
-import com.rempler.thevoids.proxy.ClientProxy;
-import com.rempler.thevoids.proxy.CommonProxy;
+import com.rempler.thevoids.Workbench.StoneWorkbench;
 import com.rempler.thevoids.world.TheVoidsWorldType;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -25,8 +20,12 @@ public class TheVoids
     public static final WorldType THE_VOIDS_TYPE = new TheVoidsWorldType();
 
     public TheVoids() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        IEventBus iEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        iEventBus.addListener(StoneWorkbench::setup);
+        iEventBus.addListener(StoneWorkbench::enqueueIMC);
+
+        iEventBus.addListener(this::setup);
+        iEventBus.addListener(this::doClientStuff);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

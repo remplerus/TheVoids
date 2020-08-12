@@ -1,14 +1,7 @@
 package com.rempler.thevoids;
 
-import com.rempler.thevoids.block.TheVoidsTileEntity;
-import com.rempler.thevoids.container.TheVoidsContainer;
-import com.rempler.thevoids.init.ModObjects;
 import com.rempler.thevoids.world.TheVoidsBiome;
 import com.rempler.thevoids.world.TheVoidsBiomes;
-import net.minecraft.block.Block;
-import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.RegistryEvent;
