@@ -1,19 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "X",
-    "#",
-    "#"
+    "XX",
+    "XX"
   ],
   "key": {
-    "#": {
-      "tag": "forge:rods/wooden"
-    },
     "X": {
       "item": "minecraft:cobblestone"
     }
   },
   "result": {
-    "item": "minecraft:stone_shovel"
+    "item": "minecraft:workbench",
+    "count": 1
   }
 }
