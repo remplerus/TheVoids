@@ -1,6 +1,5 @@
 package com.rempler.thevoids;
 
-import com.rempler.thevoids.Workbench.StoneWorkbench;
 import com.rempler.thevoids.world.TheVoidsWorldType;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,8 +20,6 @@ public class TheVoids
 
     public TheVoids() {
         IEventBus iEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        iEventBus.addListener(StoneWorkbench::setup);
-        iEventBus.addListener(StoneWorkbench::enqueueIMC);
 
         iEventBus.addListener(this::setup);
         iEventBus.addListener(this::doClientStuff);
