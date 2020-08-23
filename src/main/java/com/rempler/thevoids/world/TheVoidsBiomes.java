@@ -9,7 +9,7 @@ public class TheVoidsBiomes {
     public static Biome the_void;
 
     public static void registerBiomes(){
-        registerBiome(the_void, Type.VOID, Type.PLAINS, Type.MOUNTAIN);
+        registerBiome(the_void, Type.VOID, Type.PLAINS, Type.MOUNTAIN, Type.RIVER, Type.OCEAN);
     }
 
     public static void registerBiome(Biome biome, Type... types){

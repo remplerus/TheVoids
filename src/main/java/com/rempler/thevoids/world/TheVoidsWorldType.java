@@ -4,6 +4,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.provider.SingleBiomeProvider;
 import net.minecraft.world.biome.provider.SingleBiomeProviderSettings;
+import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.OverworldChunkGenerator;
 import net.minecraft.world.gen.OverworldGenSettings;
@@ -15,9 +16,14 @@ public class TheVoidsWorldType extends WorldType {
 
     @Override
     public ChunkGenerator<?> createChunkGenerator(World world){
-        OverworldGenSettings settings = new OverworldGenSettings();
-        SingleBiomeProviderSettings single = new SingleBiomeProviderSettings(world.getWorldInfo());
-        single.setBiome(TheVoidsBiomes.the_void);
-        return new OverworldChunkGenerator(world, new SingleBiomeProvider(single), settings);
+        if (world.getDimension().getType() == DimensionType.OVERWORLD) {
+            OverworldGenSettings settings = new OverworldGenSettings();
+            SingleBiomeProviderSettings single = new SingleBiomeProviderSettings(world.getWorldInfo());
+            single.setBiome(TheVoidsBiomes.the_void);
+            return new OverworldChunkGenerator(world, new SingleBiomeProvider(single), settings);
+        }
+        else {
+            return super.createChunkGenerator(world);
+        }
     }
 }
