@@ -18,7 +18,7 @@ public class TheVoidsWorldType extends WorldType {
     public ChunkGenerator<?> createChunkGenerator(World world){
         if (world.getDimension().getType() == DimensionType.OVERWORLD) {
             OverworldGenSettings settings = new OverworldGenSettings();
-            SingleBiomeProviderSettings single = new SingleBiomeProviderSettings(world.getWorldInfo());
+            SingleBiomeProviderSettings single = new SingleBiomeProviderSettings();
             single.setBiome(TheVoidsBiomes.the_void);
             return new OverworldChunkGenerator(world, new SingleBiomeProvider(single), settings);
         }
