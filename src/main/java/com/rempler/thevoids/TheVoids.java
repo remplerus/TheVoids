@@ -1,7 +1,6 @@
 package com.rempler.thevoids;
 
-import com.rempler.thevoids.world.TheVoidsWorldType;
-import net.minecraft.world.WorldType;
+import com.rempler.thevoids.world.TheVoidsChunkGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -16,7 +15,6 @@ public class TheVoids
 {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "thevoids";
-    public static final WorldType THE_VOIDS_TYPE = new TheVoidsWorldType();
 
     public TheVoids() {
         IEventBus iEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -28,7 +26,7 @@ public class TheVoids
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-
+        event.enqueueWork(TheVoidsChunkGenerator::init);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
